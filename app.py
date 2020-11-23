@@ -23,9 +23,9 @@ class Places(Resource):
 
         # check if we already have the location in the places list
         if args['location'] in DATA['places']:
-            return {'messsage', f"'{args['location']}' already exitsts"}, 401
+            return {'messsage' : f"'{args['location']}' already exitsts"}, 401
         DATA['places'].append(args['location'])
-        return {'data', DATA}, 200
+        return {'data': DATA}, 200
 
     def delete(self):
         args = self._parse_request()
